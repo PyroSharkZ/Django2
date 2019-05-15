@@ -3,11 +3,11 @@
 {% load static %}
 
 {% block content %}
-    
+<img src={% static 'wiki/img/mywikilogo.png' %} height="150px" width="150px"/>
+
 <div class="container">
     {% block contentTitle %}
-    <h2 class="text-success">Wiki Index</h2>
-    <img src={% static 'wiki/img/jack.jpg' %}/>
+    <h2 class="text-dark">Wiki Index</h2>
     {% endblock %}
     {% if pages %}
     <ul class="list-group">
