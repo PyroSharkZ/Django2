@@ -6,16 +6,15 @@
 
  <!--    <script src="{% static 'tinymce/tinymce.min.js' %}"></script> -->
  <!--    <script>tinymce.init({ selector:'#id_content', plugins: 'autolink' });</script> -->
-
-    {% block title %}You are now editing: {{page_name}}{% endblock %}
-    <header><h3>{{page_name}}</h3></header>
+    <div class="container">
+        {% block title %}You are now editing: {{page_name}}{% endblock %}
+        <header><h3>{{page_name}}</h3></header>
     
-    <form method="post" action="{% url 'wiki:save_page' page_name %}">
-
-    {% csrf_token %}
-        <textarea id="id_content" name="content" rows="10" cols="40">{{content}}</textarea>
-        <button name="Save" class="btn btn-success" type="submit" value="Save">Save</button>
-        <button name="Cancel" class="btn btn-danger" type="submit" value="Reset">Cancel</button>
-    </form>
-
+        <form method="post" action="{% url 'wiki:save_page' page_name %}">
+            {% csrf_token %}
+            <textarea id="id_content" name="content" rows="10" cols="40">{{content}}</textarea>
+            <button name="Save" class="btn btn-success" type="submit" value="Save">Save</button>
+            <button name="Cancel" class="btn btn-danger" type="submit" value="Reset">Cancel</button>
+        </form>
+    </div>
 {% endblock %}
