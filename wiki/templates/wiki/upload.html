@@ -3,7 +3,9 @@
 
 {% block content %}
 <div class="container">
-    {% block contentTitle %}Uploaded Files{% endblock %}
+        {% block contentTitle %}<h2 class="text-dark">Uploads</h2>{% endblock %}
+    <hr/>
+    <br/>
     <section>
     
         <form method='POST' enctype='multipart/form-data' action="{% url 'wiki:upload_page' %}">
@@ -12,7 +14,7 @@
             <input type='submit' value="Upload">
         </form>
     </section> 
-    <hr/>
+    <br/>
     <section>
         {% if files %}
         <ul>

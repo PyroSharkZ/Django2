@@ -6,11 +6,8 @@
 
 <div class="container">
     {% block contentTitle %}<h2 class="text-dark">Index</h2>{% endblock %}
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'wiki:index' %}">Home</a></li>
-        </ol>
-    </nav>
+    <hr/>
+    <br/>
     {% if pages %}
     <ul class="list-group">
     {% for page in pages %}
@@ -19,13 +16,8 @@
     {% else %}
     <p>No pages are available.</p>
     {% endif %}
-    <br/>
-    {% if user.is_authenticated%}
-    <a class="btn btn-danger" href="{% url 'wiki:logout'%}">Logout</a>
-    {% else %}
-    <a class="btn btn-success" href="{% url 'wiki:login' %}">Login</a>
-    {% endif %}
-    {% endblock content %}
-    </ul>
     
+    </ul>
 </div>
+
+{% endblock content %}

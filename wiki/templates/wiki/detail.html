@@ -5,10 +5,11 @@
 <div class="container">
     {% block contentTitle %}
     <h2 class="text-primary">{{page.title}}</h2>
+    <hr/>
     {% endblock %}
-{{page.content|markup|wikify|safe}}
-<br/>
-<a href="{% url 'wiki:index' %}"><button class="btn btn-primary">Back to Index</button></a>
-<a href="{% url 'wiki:edit_page' page.title %}"><button class="btn btn-warning">Edit</button></a>
+    <br/>
+    {{page.content|markup|wikify|safe}}
+    <br/>
+    <a href="{% url 'wiki:edit_page' page.title %}"><button class="btn btn-warning">Edit</button></a>
 </div>
 {% endblock %}
