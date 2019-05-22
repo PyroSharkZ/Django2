@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Page, UserFileUpload
 from django.contrib.auth.decorators import login_required
 from .forms import UploadFileForm
+import logging
 
 class IndexView(generic.ListView):
     template_name = 'wiki/index.html'
